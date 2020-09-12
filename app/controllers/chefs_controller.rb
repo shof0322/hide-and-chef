@@ -19,6 +19,6 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:name, :explanation, :category_id, :commitment, :prefecture_id, :city, :address, :building, :phone_num, :target_amount, :target_return).merge(user_id: current_user.id)
+    params.require(:chef).permit(:image, :name, :explanation, :category_id, :commitment, :prefecture_id, :city, :address, :building, :phone_num, :target_amount, :target_return).merge(user_id: current_user.id)
   end
 end
