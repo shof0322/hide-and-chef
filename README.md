@@ -28,7 +28,7 @@
 | explanation   | text       | null: false                    |
 | category_id   | integer    | null: false                    |
 | commitment    | text       | null: false                    |
-| prefecture    | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
 | address       | string     | null: false                    |
 | building      | string     |                                |

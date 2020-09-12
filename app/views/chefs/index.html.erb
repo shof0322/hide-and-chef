@@ -122,7 +122,14 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
+    <h2 class='title'>ピックアップシェフ</h2>
+    <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <ul class='item-lists'>
+
+    </ul>
+  </div>
+  <div class='item-contents'>
+    <h2 class='title'>ピックアップコース</h2>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
 
@@ -131,7 +138,7 @@
   <%# //商品一覧 %>
 </div>
 <div class='purchase-btn'>
-  <span class='purchase-btn-text'>出品する</span>
+  <span class='purchase-btn-text'>出店する</span>
   <% if user_signed_in? %>
     <a href="/chefs/new">
       <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
