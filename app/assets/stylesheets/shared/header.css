@@ -17,7 +17,11 @@
 
 .furima-icon {
   width: 10vw;
-  margin-right: 10vw;
+}
+
+.title-logo {
+  width: 50vw;
+  font-size: 30px;
 }
 
 .search-form {
