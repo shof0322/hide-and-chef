@@ -137,16 +137,23 @@
   </div>
   <%# //商品一覧 %>
 </div>
-<div class='purchase-btn'>
-  <span class='purchase-btn-text'>出店する</span>
-  <% if user_signed_in? %>
-    <a href="/chefs/new">
-      <%= image_tag 'chef.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-    </a>
-  <% else%>
-    <a href="/users/sign_in">
-      <%= image_tag 'chef.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-    </a>
+
+<% if user_signed_in? %>
+  <% unless @chef.exists?(user_id: current_user.id) %> <%# すでに出店済みのユーザーには出店ボタンを表示しない %>
+    <div class='purchase-btn'>
+    <span class='purchase-btn-text'>出店する</span>
+      <a href="/chefs/new">
+        <%= image_tag 'chef.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+      </a>
+    </div>
   <% end %>
-</div>
+<% else %>
+  <div class='purchase-btn'>
+    <span class='purchase-btn-text'>出店する</span>
+      <a href="/users/sign_in">
+        <%= image_tag 'chef.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+      </a>
+  </div>
+<% end %>
+
 <%= render "shared/footer" %>

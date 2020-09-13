@@ -7,7 +7,8 @@ class Chef < ApplicationRecord
   belongs_to :user
 
   with_options presence: true do
-    validates :image, :name, :explanation, :commitment, :city, :address, :user_id
+    validates :image, :name, :explanation, :commitment, :city, :address
+    validates :user_id, uniqueness: true
     validates :prefecture_id, :category_id, numericality: { other_than: 1 }
     validates :phone_num, format: { with: /\A\d{11}\z/ }
     end

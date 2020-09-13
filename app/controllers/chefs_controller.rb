@@ -1,10 +1,15 @@
 class ChefsController < ApplicationController
   def index
-    
+    @chef = Chef.all
   end
 
   def new
-    @chef = Chef.new
+    @chef = Chef.all
+    if @chef.exists?(user_id: current_user.id)
+      redirect_to root_path
+    else
+      @chef = Chef.new
+    end
   end
 
   def create
