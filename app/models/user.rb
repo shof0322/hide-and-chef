@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :chefs
+
   regexp_name = /\A[ぁ-んァ-ン一-龥]/
   regexp_name_kana = /\A[ァ-ヶー－]+\z/
   regexp_password = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{6,100}+\z/

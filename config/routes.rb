@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root to: "chefs#index"
 
-  resources :chefs, only:[:index]
+  resources :chefs, only:[:index, :new, :create]
 end
