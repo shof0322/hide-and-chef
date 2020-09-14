@@ -25,6 +25,15 @@ class ChefsController < ApplicationController
     @chef = Chef.find_by(user_id: params[:id])
   end
 
+  def destroy
+    chef = Chef.find_by(user_id: params[:id])
+    if chef.destroy
+      render :destroy
+    else
+      render :show
+    end
+  end
+
   private
 
   def chef_params

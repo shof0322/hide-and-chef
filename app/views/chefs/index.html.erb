@@ -126,7 +126,7 @@
     <ul class='item-lists'>
       <% @chefs.each do |chef| %>
       <li class='list'>
-        <%= link_to "/chefs/#{chef.id}" do %>
+        <%= link_to "/chefs/#{chef.user_id}" do %>
         <div class='item-img-content'>
           <%= image_tag chef.image, class: "item-img" %>
         </div>
