@@ -22,7 +22,7 @@ class ChefsController < ApplicationController
   end
 
   def show
-    @chef = Chef.find(params[:id])
+    @chef = Chef.find_by(user_id: params[:id])
   end
 
   private
