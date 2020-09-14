@@ -12,7 +12,12 @@
 
     <% if user_signed_in? %>
       <% if current_user.id == @chef.user_id %>
-        <%= link_to 'コース料理の登録', "/chefs/#{@chef.id}/courses/new", method: :get, class: "item-red-btn" %>
+        <% unless @chef.course.present? %>
+          <%= link_to 'コース料理の登録', "/chefs/#{@chef.id}/courses/new", method: :get, class: "item-red-btn" %>
+         <% else %>
+          <%= link_to 'コース料理の編集', "/chefs/#{@chef.id}/courses/#{@chef.course.id}/edit", method: :get, class: "item-red-btn" %>
+          <%= link_to 'コース料理の削除', "/chefs/#{@chef.id}/courses/#{@chef.course.id}", method: :destroy, class: "item-red-btn" %>
+         <% end %> 
         <p class='or-text'>or</p>
         <%= link_to 'シェフを辞める', "/chefs/#{current_user.id}", method: :delete, class:'item-destroy' %>
       <% end %>

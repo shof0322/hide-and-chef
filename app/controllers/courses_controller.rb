@@ -12,6 +12,14 @@ class CoursesController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
+  def destory
+    binding.pry
+  end
+
   private
   
   def course_params
