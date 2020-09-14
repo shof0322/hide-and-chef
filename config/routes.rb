@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root to: "chefs#index"
 
-  resources :chefs, only:[:index, :new, :create, :show, :destroy]
+  resources :chefs, only:[:index, :new, :create, :show, :destroy] do
+    resources :courses, only:[:new, :create]
+  end
 end
