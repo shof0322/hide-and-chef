@@ -3,7 +3,7 @@ class Course < ApplicationRecord
   belongs_to_active_hash :category
 
   has_many_attached :images
-  belongs_to :chef, dependent: :destroy
+  belongs_to :chef
 
   with_options presence: true do
     validates :menu1, :menu2, :menu3, :explanation, :chef_id

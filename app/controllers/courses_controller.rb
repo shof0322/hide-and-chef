@@ -13,11 +13,7 @@ class CoursesController < ApplicationController
   end
 
   def edit
-    
-  end
-
-  def destory
-    binding.pry
+    course = Course.find_by(chef_id: params[:chef_id])
   end
 
   private
