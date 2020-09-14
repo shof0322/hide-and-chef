@@ -1,6 +1,6 @@
 class ChefsController < ApplicationController
   def index
-    @chef = Chef.all
+    @chefs = Chef.all
   end
 
   def new
