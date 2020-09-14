@@ -120,7 +120,7 @@
   </div>
   <%# //Hide and Chefの特徴 %>
 
-  <%# シェフ・コース一覧 %>
+  <%# シェフ一覧 %>
   <div class='item-contents'>
     <h2 class='title'>ピックアップシェフ</h2>
     <ul class='item-lists'>
@@ -140,14 +140,11 @@
       <% end %>
     </ul>
   </div>
-  
-  <div class='item-contents'>
-    <h2 class='title'>ピックアップコース</h2>
-    <ul class='item-lists'>
+  <%# //シェフ一覧 %>
 
-    </ul>
-  </div>
-  <%# //シェフ・コース一覧 %>
+  <%# ジャンル一覧 %>
+  <%= render "shared/genre" %>
+  <%# //ジャンル一覧 %>
 </div>
 
 <% if user_signed_in? %>
