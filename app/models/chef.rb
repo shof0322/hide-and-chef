@@ -5,6 +5,7 @@ class Chef < ApplicationRecord
   
   has_one_attached :image
   belongs_to :user
+  has_one :course, dependent: :destroy
 
   with_options presence: true do
     validates :image, :name, :explanation, :commitment, :city, :address

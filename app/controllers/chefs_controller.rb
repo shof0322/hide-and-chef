@@ -23,6 +23,11 @@ class ChefsController < ApplicationController
 
   def show
     @chef = Chef.find_by(user_id: params[:id])
+    if @chef.nil?
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   def destroy

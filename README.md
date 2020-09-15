@@ -52,7 +52,7 @@
 | explanation    | text       | null: false                    |
 | price          | integer    | null: false                    |
 | category_id    | integer    | null: false                    |
-| shop           | references | null: false, foreign_key: true | 
+| chef           | references | null: false, foreign_key: true | 
 
 ### Association
 

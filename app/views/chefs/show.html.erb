@@ -9,14 +9,34 @@
     <div class='item-img-content'>
       <%= image_tag @chef.image ,class:"item-box-img" %>
     </div>
+    <div class="item-explain-box">
+      <span><%= @chef.explanation %></span>
+    </div>
 
     <% if user_signed_in? %>
       <% if current_user.id == @chef.user_id %>
-        <%= link_to 'コース料理の登録', "#", method: :get, class: "item-red-btn" %>
+        <% unless @chef.course.present? %>
+          <%= link_to 'コース料理の登録', "/chefs/#{@chef.id}/courses/new", method: :get, class: "item-red-btn" %>
+         <% else %>
+          <%= link_to 'コース料理の編集', "/chefs/#{@chef.id}/courses/#{@chef.course.id}/edit", method: :get, class: "item-red-btn" %>
+          <%= link_to 'コース料理の削除', "/chefs/#{@chef.id}/courses/#{@chef.course.id}", method: :delete, data: { confirm: '登録済みのコース料理を削除してよろしいですか?' }, class: "item-red-btn" %>
+         <% end %> 
         <p class='or-text'>or</p>
-        <%= link_to '削除', "/chefs/#{current_user.id}", method: :delete, class:'item-destroy' %>
+        <%= link_to 'シェフを辞める', "/chefs/#{current_user.id}", method: :delete, data: { confirm: '本当にシェフを辞めますか?' }, class:'item-destroy' %>
       <% end %>
     <% end %>
+
+    <%# /コース料理情報の表示%>  
+    <% if @chef.course.present? %>
+      <%= @chef.course.menu1 %>
+      <%= @chef.course.menu2 %>
+      <%= @chef.course.menu3 %>
+      <% @chef.course.images.each do |image| %>
+        <%= image_tag image, class:"item-box-img" %>
+      <% end %>
+      <%= @chef.course.explanation %>
+    <% end %>
+    <%# //コース料理情報の表示%>
 
     <% if user_signed_in? %>
       <% if current_user.id != @chef.user_id %>
@@ -24,9 +44,6 @@
       <% end %>
     <% end %>
 
-    <div class="item-explain-box">
-      <span><%= @chef.explanation %></span>
-    </div>
     <table class="detail-table">
       <tbody>
         <tr>
