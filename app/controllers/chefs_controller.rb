@@ -1,7 +1,6 @@
 class ChefsController < ApplicationController
   def index
     @chefs = Chef.all
-    @courses = Course.all
   end
 
   def new
@@ -27,6 +26,7 @@ class ChefsController < ApplicationController
     if @chef.nil?
       redirect_to root_path
     else
+      render :show
     end
   end
 
