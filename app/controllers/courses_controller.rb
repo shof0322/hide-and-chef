@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
   end
 
   def edit
-    course = Course.find_by(chef_id: params[:chef_id])
+    @course = Course.find_by(chef_id: params[:chef_id])
   end
 
   def destroy
@@ -22,6 +22,15 @@ class CoursesController < ApplicationController
       redirect_to root_path
     else
       render 'destroy'
+    end
+  end
+
+  def update
+    course = Course.find(params[:id])
+    if course.update(course_params)
+      redirect_to root_path
+    else
+      render 'edit'
     end
   end
 
