@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def new
+    @chef = Chef.find(params[:format])
     @order = Order.new
   end
 

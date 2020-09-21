@@ -1,2 +1,124 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<%= render "shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @chef.name %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @chef.image ,class:"item-box-img" %>
+    </div>
+    <div class="item-explain-box">
+      <span><%= @chef.explanation %></span>
+    </div>
+
+    <%# /コース料理情報の表示%>  
+    <% if @chef.course.present? %>
+      <%= @chef.course.menu1 %>
+      <%= @chef.course.menu2 %>
+      <%= @chef.course.menu3 %>
+      <% @chef.course.images.each do |image| %>
+        <%= image_tag image, class:"item-box-img" %>
+      <% end %>
+      <%= @chef.course.explanation %>
+    <% end %>
+    <%# //コース料理情報の表示%>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">出品者</th>
+          <td class="detail-value"><%= @chef.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @chef.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">こだわり</th>
+          <td class="detail-value"><%= @chef.commitment %></td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+    <p>コース料金（税込み）</p>
+    <p><%= "¥#{@chef.course.price}" %></p>
+  </div>
+</div>
+<div class='title'>
+  <p>上記内容をご確認の上、問題がないようでしたら下記フォームを入力し、ご予約を確定させてください。</p>
+</div>
+<div>
+    <%= form_with model: @order, url: "#", method: :post, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 予約者情報の入力 %>
+    <div class='shipping-address-form'>
+      <h1 class='info-input-haedline'>
+        予約者情報入力
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">郵便番号</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">都道府県</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">市区町村</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">番地</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :address, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">建物名</label>
+          <span class="form-any">任意</span>
+        </div>
+        <%= f.text_field :building, class:"input-default", id:"building", placeholder:"例）柳ビル103" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">電話番号</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :phone_num, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">予約希望日</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.date_field :reserve_date, class:"input-default", id:"reserve-date" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">予約希望時間</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.time_field :reserve_time, class:"input-default", id:"reserve-time" %>
+      </div>
+    </div>
+    <div class='buy-btn'>
+      <%= f.submit "予約確定" ,class:"buy-red-btn" %>
+    </div>
+    <% end %>
+  </div>
+
+<%= render "shared/footer" %>
