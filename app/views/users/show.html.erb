@@ -2,8 +2,29 @@
   <div class="AccountPage__title">
     <h1>マイページ</h1>
   </div><br>
+  <div class="Card__title">
+    <h2>カード情報<h2>
+  </div>
+  <div class="Card_info">
+    【カード番号】
+    <br>
+    <%= "**** **** **** " + @card[:last4] %>
+    <%# カード番号の下4桁を取得 %>
+
+    <br>
+    【有効期限】
+    <br>
+    <%= @card[:exp_month] %>
+    <%# 有効期限の「月」を取得 %>
+    /
+    <%= @card[:exp_year] %>
+    <%# 有効期限の「年」を取得 %>
+  </div>
   <div class="Account__info">
     <h2>ユーザー情報</h2>
     <%= @user.nickname%>
   </div>
 </div>
+<p><%= link_to "ユーザー情報編集", edit_user_registration_path(current_user) %></p>
+<p><%= link_to "クレジットカード情報登録", new_card_path %></p>
+<%= link_to "Topへ戻る", root_path %>
