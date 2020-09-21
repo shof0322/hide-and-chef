@@ -4,6 +4,7 @@ class Course < ApplicationRecord
 
   has_many_attached :images
   belongs_to :chef
+  has_many :orders
 
   with_options presence: true do
     validates :menu1, :menu2, :menu3, :explanation, :chef_id

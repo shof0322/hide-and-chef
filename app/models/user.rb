@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :chefs
+  has_many :orders
   has_one :card, dependent: :destroy
 
   regexp_name = /\A[ぁ-んァ-ン一-龥]/

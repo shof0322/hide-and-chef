@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'cards/new'
-  get 'users/show'
+  get 'orders/new'
+  get 'orders/create'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   end
 
   resources :cards, only: [:new, :create]
+
+  resources :orders, only: [:new, :create]
 end
