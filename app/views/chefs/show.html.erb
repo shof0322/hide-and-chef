@@ -40,7 +40,7 @@
 
     <% if user_signed_in? %>
       <% if current_user.id != @chef.user_id %>
-        <%= link_to '予約画面に進む', "#" ,class:"item-red-btn"%>
+        <%= link_to '予約画面に進む', new_order_path(@chef) ,class:"item-red-btn" %>
       <% end %>
     <% end %>
 
