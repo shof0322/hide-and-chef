@@ -1,6 +1,6 @@
 class ChefsController < ApplicationController
   def index
-    @chef = Chef.all
+    @chefs = Chef.all
   end
 
   def new
@@ -18,6 +18,24 @@ class ChefsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def show
+    @chef = Chef.find_by(user_id: params[:id])
+    if @chef.nil?
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
+  def destroy
+    chef = Chef.find_by(user_id: params[:id])
+    if chef.destroy
+      render :destroy
+    else
+      render :show
     end
   end
 

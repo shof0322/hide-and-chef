@@ -18,6 +18,7 @@
 
 - has_many :chefs
 - has_many :orders
+- has_one :card
 
 
 ## Chefs テーブル
@@ -52,7 +53,7 @@
 | explanation    | text       | null: false                    |
 | price          | integer    | null: false                    |
 | category_id    | integer    | null: false                    |
-| shop           | references | null: false, foreign_key: true | 
+| chef           | references | null: false, foreign_key: true | 
 
 ### Association
 
@@ -89,3 +90,15 @@
 ### Association
 
 - belongs_to :order
+
+## Cards テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| card_token     | string     | null: false                    |
+| customer_token | string     | null: false                    |
+| user           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
