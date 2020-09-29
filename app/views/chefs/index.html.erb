@@ -12,10 +12,6 @@
     <p class='service-explain'>
       ゴーストレストラン作成サービスです
     </p>
-    <div class='store-btn'>
-      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
-      <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
-    </div>
   </div>
   <%# //画面上部のキャッチコピー部分  %>
 
@@ -141,6 +137,28 @@
     </ul>
   </div>
   <%# //シェフ一覧 %>
+  
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  <!-- /Swiper -->
 
   <%# ジャンル一覧 %>
   <%= render "shared/genre" %>

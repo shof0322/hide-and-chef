@@ -12,13 +12,12 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      <li><%= link_to 'ジャンルから探す', "#", class: "category-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %> <%# ログインの有無で表示が変わるように分岐%>
         <li><%= link_to 'マイページ', user_path(current_user), class: "user-nickname" %></li> 
-        <li><%= link_to current_user.nickname, "/chefs/#{current_user.id}", class: "user-nickname" %></li> 
+        <li><%= link_to 'シェフページ', "/chefs/#{current_user.id}", class: "user-nickname" %></li> 
         <li><%= link_to 'ログアウト', "/users/sign_out", method: :delete, class: "logout" %></li>
       <% else %>
         <li><%= link_to 'ログイン', "/users/sign_in", class: "login" %></li>
