@@ -1,0 +1,143 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">コース情報を入力</h2>
+    <%= form_with model: @course, url: chef_courses_path, method: :post, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# メニューと説明 %>
+    <div class="new-items">
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+
+      <div class="weight-bold-text">
+        メニュー１
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :menu1, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%# 画像 %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          メニュー１の画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :images, name: 'course[images][]' %>
+        </div>
+      </div>
+      <%# /画像 %>
+
+      <div class="weight-bold-text">
+        メニュー２
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :menu2, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%# 画像 %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          メニュー２の画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :images, name: 'course[images][]' %>
+        </div>
+      </div>
+      <%# /画像 %>
+
+      <div class="weight-bold-text">
+        メニュー３
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :menu3, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%# 画像 %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          メニュー３の画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :images, name: 'course[images][]' %>
+        </div>
+      </div>
+      <%# /画像 %>
+            
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          コース説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explanation, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /メニューと説明 %>
+
+    <%# 販売価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>販売価格<br>(¥300〜9,999,999)</span>
+        <a class="question" href="#">?</a>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+        </div>
+        <div class="price-content">
+          <span>販売手数料 (10%)</span>
+          <span>
+            <span id='add-tax-price'></span>円
+          </span>
+        </div>
+        <div class="price-content">
+          <span>販売利益</span>
+          <span>
+            <span id='profit'></span>円
+        </div>
+        </span>
+      </div>
+    </div>
+    <%# /販売価格 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">Hide and Chef 利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
+    <p class="inc">
+      ©︎Hide and Chef,Inc.
+    </p>
+  </footer>
+</div>

@@ -1,28 +1,24 @@
 <%= render "shared/header" %>
 <div class='main'>
 
-  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <%# 画面上部のキャッチコピー部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
-      人生を変えるフリマアプリ
+      キャッチコピー
     </h2>
     <p class='service-explain'>
-      FURIMAはだれでもかんたんに出品・購入できる
+      Hide and Chefはだれでもかんたんに出店・集客できる
     </p>
     <p class='service-explain'>
-      フリマアプリです
+      ゴーストレストラン作成サービスです
     </p>
-    <div class='store-btn'>
-      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
-      <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
-    </div>
   </div>
-  <%# //画面上部の「人生を変えるフリマアプリ」帯部分  %>
+  <%# //画面上部のキャッチコピー部分  %>
 
-  <%# FURIMAが選ばれる3つの理由部分 %>
+  <%# Hide and Chefが選ばれる3つの理由部分 %>
   <div class='select-reason-contents'>
     <h2 class='title'>
-      FURIMAが選ばれる3つの理由
+      Hide and Chefが選ばれる3つの理由
     </h2>
     <ul class='reason-lists'>
       <li class='list'>
@@ -30,10 +26,10 @@
         <span class='reason-list-number'>1</span>
         <h3 class='reason-list-text'>
           <span class='reason-list-blue-text'>3分</span>
-          ですぐに出品
+          ですぐに出店
         </h3>
         <p class='reason-list-description'>
-          スマホで入力するだけで簡単に出品できる！
+          スマホで入力するだけで簡単に出店できる！
         </p>
       </li>
       <li class='list'>
@@ -44,7 +40,7 @@
           で使いやすい
         </h3>
         <p class='reason-list-description'>
-          めんどくさい入力は必要なく、検索も購入もスムーズ！
+          めんどくさい入力は必要なく、検索も予約もスムーズ！
         </p>
       </li>
       <li class='list'>
@@ -60,21 +56,21 @@
       </li>
     </ul>
   </div>
-  <%# //FURIMAが選ばれる3つの理由部分 %>
+  <%# //Hide and Chefが選ばれる3つの理由部分 %>
 
   <%# 画面中央の「会員数日本一位」帯部分 %>
   <div class='ad-contents'>
     <h2 class='ad-title'>
-      会員数日本一位
+      どこをお店にしたっていいんです
     </h2>
     <p class='ad-explain'>
-      FURIMAは、フリマアプリで最も人気。
+      あなたのアイディア次第
     </p>
     <p class='ad-explain'>
-      出品・購入回数も業界最多です！
+      応援してもらって、開業資金も貯めちゃおう
     </p>
     <p class='ad-explain'>
-      ほしかったあの商品に出会えるかもしれません。
+      かけがえのない常連さんに出会えるかもしれません
     </p>
     <div class='store-btn'>
       <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
@@ -83,19 +79,19 @@
   </div>
   <%# //画面中央の「会員数日本一位」帯部分 %>
 
-  <%# FURIMAの特徴 %>
+  <%# Hide and Chefの特徴 %>
   <div class='feature-contents'>
     <h2 class='title'>
-      FURIMAの特徴
+      Hide and Chefの特徴
     </h2>
     <ul class='feature-lists'>
       <li class='list'>
         <%= image_tag "furima-intro04.png", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          簡単に売り買いできる
+          出店場所はどこでもOK！
         </h3>
         <p class='feature-list-description'>
-          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+          レンタルスペース、シェアキッチン、あなたの自宅、海でも川でも！友人を呼ぶ感覚で
         </p>
       </li>
       <li class='list'>
@@ -118,28 +114,73 @@
       </li>
     </ul>
   </div>
-  <%# //FURIMAの特徴 %>
+  <%# //Hide and Chefの特徴 %>
 
-  <%# 商品一覧 %>
+  <%# シェフ一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
-    <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <h2 class='title'>ピックアップシェフ</h2>
     <ul class='item-lists'>
-
+      <% @chefs.each do |chef| %>
+      <li class='list'>
+        <%= link_to "/chefs/#{chef.user_id}" do %>
+        <div class='item-img-content'>
+          <%= image_tag chef.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= chef.name %>
+          </h3>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
     </ul>
   </div>
-  <%# //商品一覧 %>
+  <%# //シェフ一覧 %>
+  
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  <!-- /Swiper -->
+
+  <%# ジャンル一覧 %>
+  <%= render "shared/genre" %>
+  <%# //ジャンル一覧 %>
 </div>
-<div class='purchase-btn'>
-  <span class='purchase-btn-text'>出品する</span>
-  <% if user_signed_in? %>
-    <a href="/chefs/new">
-      <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-    </a>
-  <% else%>
-    <a href="/users/sign_in">
-      <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-    </a>
+
+<% if user_signed_in? %>
+  <% unless @chefs.exists?(user_id: current_user.id) %> <%# すでに出店済みのユーザーには出店ボタンを表示しない %>
+    <div class='purchase-btn'>
+    <span class='purchase-btn-text'>出店する</span>
+      <a href="/chefs/new">
+        <%= image_tag 'chef.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+      </a>
+    </div>
   <% end %>
-</div>
+<% else %>
+  <div class='purchase-btn'>
+    <span class='purchase-btn-text'>出店する</span>
+      <a href="/users/sign_in">
+        <%= image_tag 'chef.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+      </a>
+  </div>
+<% end %>
+
 <%= render "shared/footer" %>

@@ -9,7 +9,8 @@ a {
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('furima-header01.png');
+  height: 70vh;
+  background-image: image-url('food.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -64,7 +65,7 @@ a {
   content: '';
   width: 70px;
   height: 4px;
-  background-color: #3ccace;
+  background-color: #b19177;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -99,7 +100,7 @@ a {
   font-size: 30px;
   text-align: center;
   line-height: 60px;
-  background-color: #3ccace;
+  background-color: #b19177;
   color: #fff;
 }
 
@@ -110,7 +111,7 @@ a {
 }
 
 .reason-list-blue-text {
-  color: #3ccace;
+  color: #b19177;
 }
 
 .reason-list-description {
@@ -124,7 +125,7 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('furima-header02.png');
+  background-image: image-url('table.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -180,7 +181,7 @@ a {
   content: '';
   width: 70px;
   height: 4px;
-  background-color: #3ccace;
+  background-color: #b19177;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -233,7 +234,7 @@ a {
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #3ccace;
+  color: #b19177;
   font-weight: bold;
 }
 
@@ -309,3 +310,14 @@ a {
 }
 
 /* //商品一覧 */
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
