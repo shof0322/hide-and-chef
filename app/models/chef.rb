@@ -11,6 +11,5 @@ class Chef < ApplicationRecord
     validates :user_id, uniqueness: true
     validates :prefecture_id, :category_id, numericality: { other_than: 1 }
     validates :phone_num, format: { with: /\A\d{11}\z/ }
-    end
-
+  end
 end
