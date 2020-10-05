@@ -1,3 +1,49 @@
+# アプリケーション名
+Hide and Chef
+
+# アプリケーション概要
+自分の料理を出品できるサービスです。
+料理を提供する場所は何処でもOKです。
+レンタルスペース、シェアキッチン、自宅、海、川などアイディア次第でどこでも。
+
+# URL
+
+# テスト用アカウント
+
+# 利用方法
+【シェフとして料理を出品したい場合】
+1.まずはSign upしてください。
+2.次にシェフ登録をしてください。
+3.シェフページよりコース料理の登録をしてください。
+
+【ユーザーとしてシェフの料理を食べたい場合】
+1.まずはSign upしてください。
+2.食べたい料理、会いたいシェフを探して、予約してください。
+3.予約確定と同時に決済されます。
+
+# 目指した課題解決
+【ターゲット】
+シェフ
+・自分のお店を持ちたいが、資金がなくて断念している人
+・開店前にレシビのレビューをもらってブラッシュアップしたい人
+・気軽に自分の料理の腕前を披露してみたい人
+
+ユーザー
+・お店で食べることに飽きた人
+・シェフの卵に投資したい人
+・料理のレビューをしたい人
+
+# 洗い出した要件
+
+# 実装した機能についてのGIFと説明
+
+# 実装予定の機能
+
+# ローカルでの動作方法
+
+# データベース設計
+[ER図](https://drive.google.com/file/d/1JIHeqMOpKnmXzBkaNFyw-fCkb3aiKyot/view?usp=sharing)
+
 # テーブル設計
 
 ## Users テーブル
@@ -98,6 +144,18 @@
 | card_token     | string     | null: false                    |
 | customer_token | string     | null: false                    |
 | user           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## Sns_credentials テーブル
+
+| Column   | Type       | Options                        |
+| ---------| ---------- | ------------------------------ |
+| provider | string     |                                |
+| uid      | string     |                                |
+| user     | references | null: false, foreign_key: true |
 
 ### Association
 
