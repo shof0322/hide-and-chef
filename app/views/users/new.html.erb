@@ -1,4 +1,39 @@
-<%= link_to "メールアドレスで登録", new_user_registration_path%>
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
+    <div class='title-logo'>Hide and Chef</div>
+  </header>
 
-<%= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post%>
-<%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
+  <div>
+    <li class=signup-list>
+      <ul class='btn'>
+        <%=link_to(new_user_registration_path) do %>
+          <button class=signup-mail >メールアドレスで登録</button>
+        <%end%>
+      </ul>
+      <ul class='btn'>
+        <div class=signup-fb>
+          <i class="fa fa-facebook fa"></i>
+          <%= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post, style: "color:white;" %>
+        </div>
+      </ul>
+      <ul class='btn'>
+        <div class=signup-google>
+          <i class="fa fa-google-plus fa"></i>
+          <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post, style: "color:white;"%>
+        </div>
+      </ul>
+    </li>
+  </div>
+  
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">Hide and Chef 利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <p class="inc">
+      ©︎Hide and Chef,Inc.
+    </p>
+  </footer>
+</div>

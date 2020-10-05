@@ -3,7 +3,7 @@ a {
 }
 
 .main {
-  background: #f8f8f8;
+  padding-top: 200px;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
@@ -125,7 +125,7 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('table.jpg');
+  // background-image: image-url('table.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -228,6 +228,7 @@ a {
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .item-contents>.subtitle {
@@ -259,6 +260,15 @@ a {
 .item-img {
   width: 33vh;
   height: 33vh;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.genre-img {
+  width: 33vh;
+  height: 33vh;
+  object-fit: cover;
+  border-radius: 100px 25px 50px 50px / 50px 25px 50px 25px;
 }
 
 .sold-out {
@@ -285,6 +295,7 @@ a {
 
 .item-name {
   font-size: 2.5vh;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .item-price {
