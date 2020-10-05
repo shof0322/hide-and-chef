@@ -82,6 +82,7 @@ $ rails db:migrate
 $ rails s  
 
 # データベース設計
+![Hide and Chef](https://user-images.githubusercontent.com/69450534/95071783-2a5fee80-0745-11eb-8b82-7d855a86aa57.jpg)
 [ER図](https://drive.google.com/file/d/1JIHeqMOpKnmXzBkaNFyw-fCkb3aiKyot/view?usp=sharing)
 
 # テーブル設計
