@@ -4,7 +4,7 @@
   <%# 画面上部のキャッチコピー部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
-      キャッチコピー
+      どこをお店にしたっていいんです
     </h2>
     <p class='service-explain'>
       Hide and Chefはだれでもかんたんに出店・集客できる
@@ -15,70 +15,6 @@
   </div>
   <%# //画面上部のキャッチコピー部分  %>
 
-  <%# Hide and Chefが選ばれる3つの理由部分 %>
-  <div class='select-reason-contents'>
-    <h2 class='title'>
-      Hide and Chefが選ばれる3つの理由
-    </h2>
-    <ul class='reason-lists'>
-      <li class='list'>
-        <%= image_tag "furima-intro01.png", class:"list-pict" %>
-        <span class='reason-list-number'>1</span>
-        <h3 class='reason-list-text'>
-          <span class='reason-list-blue-text'>3分</span>
-          ですぐに出店
-        </h3>
-        <p class='reason-list-description'>
-          スマホで入力するだけで簡単に出店できる！
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "furima-intro02.png", class:"list-pict" %>
-        <span class='reason-list-number'>2</span>
-        <h3 class='reason-list-text'>
-          <span class='reason-list-blue-text'>シンプル</span>
-          で使いやすい
-        </h3>
-        <p class='reason-list-description'>
-          めんどくさい入力は必要なく、検索も予約もスムーズ！
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "furima-intro03.png", class:"list-pict" %>
-        <span class='reason-list-number'>3</span>
-        <h3 class='reason-list-text'>
-          手数料
-          <span class='reason-list-blue-text'>業界最安</span>
-        </h3>
-        <p class='reason-list-description'>
-          最大3%でお得に出品&購入！
-        </p>
-      </li>
-    </ul>
-  </div>
-  <%# //Hide and Chefが選ばれる3つの理由部分 %>
-
-  <%# 画面中央の「会員数日本一位」帯部分 %>
-  <div class='ad-contents'>
-    <h2 class='ad-title'>
-      どこをお店にしたっていいんです
-    </h2>
-    <p class='ad-explain'>
-      あなたのアイディア次第
-    </p>
-    <p class='ad-explain'>
-      応援してもらって、開業資金も貯めちゃおう
-    </p>
-    <p class='ad-explain'>
-      かけがえのない常連さんに出会えるかもしれません
-    </p>
-    <div class='store-btn'>
-      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
-      <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
-    </div>
-  </div>
-  <%# //画面中央の「会員数日本一位」帯部分 %>
-
   <%# Hide and Chefの特徴 %>
   <div class='feature-contents'>
     <h2 class='title'>
@@ -86,7 +22,7 @@
     </h2>
     <ul class='feature-lists'>
       <li class='list'>
-        <%= image_tag "furima-intro04.png", class:"list-pict" %>
+        <%= image_tag "table.jpg", class:"list-pict" %>
         <h3 class='feature-list-text'>
           出店場所はどこでもOK！
         </h3>
@@ -95,21 +31,21 @@
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "furima-intro05.png", class:"list-pict" %>
+        <%= image_tag "money.jpg", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          売上金は即日振込みに対応
+          クラウドファンディング可能！
         </h3>
         <p class='feature-list-description'>
-          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします。
+          応援してもらって、開業資金も貯めちゃおう
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "furima-intro06.png", class:"list-pict" %>
+        <%= image_tag "feedback.jpg", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          様々な支払いに対応
+          レシピをレビューしてもらえる！
         </h3>
         <p class='feature-list-description'>
-          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+          あなたのレシピをブラッシュアップ
         </p>
       </li>
     </ul>
@@ -118,11 +54,11 @@
 
   <%# シェフ一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップシェフ</h2>
+    <h2 class='title'>Pickup Chef</h2>
     <ul class='item-lists'>
       <% @chefs.each do |chef| %>
       <li class='list'>
-        <%= link_to "/chefs/#{chef.user_id}" do %>
+        <%= link_to "/chefs/#{chef.user_id}" do %>        
         <div class='item-img-content'>
           <%= image_tag chef.image, class: "item-img" %>
         </div>
@@ -136,29 +72,7 @@
       <% end %>
     </ul>
   </div>
-  <%# //シェフ一覧 %>
-  
-  <!-- Swiper -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-      <div class="swiper-slide">Slide 10</div>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-  <!-- /Swiper -->
+  <%# //シェフ一覧 %>  
 
   <%# ジャンル一覧 %>
   <%= render "shared/genre" %>

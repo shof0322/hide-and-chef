@@ -1,30 +1,45 @@
-<div class="AccountPage">
-  <div class="AccountPage__title">
-    <h1>マイページ</h1>
-  </div><br>
-  <div class="Card__title">
-    <h2>カード情報<h2>
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
+  </header>
+  <div class="AccountPage">
+    <div class="AccountPage__title">
+      My page
+    </div><br>
+    <div class="Card__title">
+      <h2>クレジットカード情報<h2><br>
+    </div>
+    <div class="Card_info">
+      【カード番号】
+      <br>
+      <%= "**** **** **** " + @card[:last4] %><br>
+      <%# カード番号の下4桁を取得 %>
+      <br>
+      【有効期限】
+      <br>
+      <%= @card[:exp_month] %>
+      <%# 有効期限の「月」を取得 %>
+      /
+      <%= @card[:exp_year] %>
+      <%# 有効期限の「年」を取得 %>
+    </div>
+    <div class="Account__info">
+      <h2>ニックネーム</h2><br>
+      <%= @user.nickname%>
+    </div>
   </div>
-  <div class="Card_info">
-    【カード番号】
-    <br>
-    <%= "**** **** **** " + @card[:last4] %>
-    <%# カード番号の下4桁を取得 %>
-
-    <br>
-    【有効期限】
-    <br>
-    <%= @card[:exp_month] %>
-    <%# 有効期限の「月」を取得 %>
-    /
-    <%= @card[:exp_year] %>
-    <%# 有効期限の「年」を取得 %>
-  </div>
-  <div class="Account__info">
-    <h2>ユーザー情報</h2>
-    <%= @user.nickname%>
-  </div>
+  <p><%= link_to "ユーザー情報編集", edit_user_registration_path(current_user) %></p>
+  <p><%= link_to "クレジットカード情報登録", new_card_path %></p>
+  <%= link_to "Topへ戻る", root_path %>
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">Hide and Chef 利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
+    <p class="inc">
+      ©︎Hide and Chef,Inc.
+    </p>
+  </footer>
 </div>
-<p><%= link_to "ユーザー情報編集", edit_user_registration_path(current_user) %></p>
-<p><%= link_to "クレジットカード情報登録", new_card_path %></p>
-<%= link_to "Topへ戻る", root_path %>

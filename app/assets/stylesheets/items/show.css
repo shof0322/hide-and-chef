@@ -1,12 +1,45 @@
 /* 商品の概要 */
+.menu-img {
+  width: 50vw;
+  border-radius: 10px;
+}
+
+.menu-name {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.course-name {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 50px;
+  padding: 10px;
+  color: #ffb340;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.course-explan {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  padding: 10px;
+  border:solid 1px gray;
+  padding: 100px;
+  margin: 20px 0px;
+}
+
+.reserve-form{
+  margin-bottom: 20px;
+}
 
 .item-show {
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vh 0;
+  padding-top: 200px;
 }
 
 .item-box {
@@ -29,7 +62,7 @@
   height: 50vh;
   width: 60vw;
   min-height: 500px;
-  background-color: rgb(205, 202, 202);
+  /* background-color: rgb(205, 202, 202); */
   object-fit: contain;
 }
 
