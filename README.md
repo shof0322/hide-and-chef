@@ -34,10 +34,15 @@ Hide and Chef
 ・料理のレビューをしたい人  
   
 # 洗い出した要件
+[要件定義](https://docs.google.com/spreadsheets/d/1jMh8WXwcRdqSNvRinptdM5J35c7pY3pIFzz17c84E5Y/edit?usp=sharing)
 
 # 実装した機能についてのGIFと説明
 
 # 実装予定の機能
+・シェフのコース料理提供をカレンダーで管理
+・予約可能状況がわかるカレンダーから予約可能な日を選択できるようにする
+・レビュー投稿機能の実装
+・寄付機能の実装
 
 # ローカルでの動作方法
 
