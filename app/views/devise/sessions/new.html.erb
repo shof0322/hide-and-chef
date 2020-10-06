@@ -31,4 +31,23 @@
 </div>
 <% end %>
 
+<div class='registration-main'>
+  <div class='form-wrap'>
+    <li class=signup-list>
+      <ul class='btn'>
+        <div class=signup-fb>
+          <i class="fa fa-facebook fa"></i>
+          <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post, style: "color:white;" %>
+        </div>
+      </ul>
+      <ul class='btn'>
+        <div class=signup-google>
+          <i class="fa fa-google-plus fa"></i>
+          <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, style: "color:white;"%>
+        </div>
+      </ul>
+    </li>
+  </div>
+</div>
+
 <%= render "shared/second-footer"%>

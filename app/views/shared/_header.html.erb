@@ -12,8 +12,6 @@
         <li><%= link_to 'Logout', "/users/sign_out", method: :delete, class: "logout" %></li>
       <% else %>
         <li><%= link_to 'Login', "/users/sign_in", class: "login" %></li>
-        <li><%= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path, method: :post, class: "login" %></li>
-        <li><%= link_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, class: "login" %></li>
         <li><%= link_to 'Sigh up', new_user_path, class: "sign-up" %></li>
       <% end %>
     </ul>
