@@ -79,22 +79,4 @@
   <%# //ジャンル一覧 %>
 </div>
 
-<% if user_signed_in? %>
-  <% unless @chefs.exists?(user_id: current_user.id) %> <%# すでに出店済みのユーザーには出店ボタンを表示しない %>
-    <div class='purchase-btn'>
-    <span class='purchase-btn-text'>シェフ登録</span>
-      <a href="/chefs/new">
-        <%= image_tag 'chef.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-      </a>
-    </div>
-  <% end %>
-<% else %>
-  <div class='purchase-btn'>
-    <span class='purchase-btn-text'>シェフ登録</span>
-      <a href="/users/sign_in">
-        <%= image_tag 'chef.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-      </a>
-  </div>
-<% end %>
-
 <%= render "shared/footer" %>
