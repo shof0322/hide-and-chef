@@ -164,14 +164,16 @@ a {
 
 /* //画面中央の「会員数日本一位」帯部分 */
 
-/* FURIMAの特徴 */
+/* 特徴 */
 .feature-contents {
   padding: 5vh 15vw;
+  background-color: #fde7ca;
 }
 
 .feature-contents>.title {
+  font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  font-size: 3.5vh;
+  font-size: 5vh;
   font-weight: bold;
   margin-bottom: 5vh;
   position: relative;
@@ -212,12 +214,12 @@ a {
   margin-top: 20px;
 }
 
-/* //FURIMAの特徴 */
+/* //特徴 */
 
 /* 商品一覧 */
 
 .item-contents {
-  background-color: #FFF;
+  background-color:white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -244,12 +246,50 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: white;
+  text-align: center;
 }
 
 .item-lists>.list {
   width: 37vh;
   padding: 1vw;
-  background-color: #FFF;
+  background-color: white;
+}
+
+.genre-contents {
+  background-color: #fde7ca;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.genre-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.genre-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fde7ca;
+}
+
+.genre-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #fde7ca;
+}
+
+.genre-info {
+  background-color: #fde7ca;
+  color: black;
+  padding: 1vw;
+  text-align: center;
 }
 
 
@@ -288,7 +328,7 @@ a {
 
 
 .item-info {
-  background-color: #FFF;
+  background-color: white;
   color: black;
   padding: 1vw;
 }
