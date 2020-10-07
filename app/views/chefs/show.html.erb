@@ -54,6 +54,7 @@
       <div class="menu-name"><%= @chef.course.menu3 %></div>
       <%= image_tag @chef.course.images[2], class:"menu-img" %>
       <div class="course-explan"><%= @chef.course.explanation %></div>
+      <div class="course-price"><%= "¥#{@chef.course.price}" %></div>
     <% end %>
     <%# //コース料理情報の表示%>
     <% if @chef.course.present? %>
