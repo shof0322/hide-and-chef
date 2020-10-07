@@ -1,0 +1,29 @@
+<%# コース一覧 %>
+<div class='item-contents'>
+<header class="items-sell-header">
+  <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
+</header>
+  <ul class='item-lists'>
+    <% @courses.each do |course| %>
+    <h2 class='title'><%= course.category.name %></h2>
+    <li class='list'>
+      <%= link_to new_order_path(course.chef_id) do %>        
+      <div class='item-img-content'>
+        <%= image_tag course.images[0], class: "item-img" %>
+      </div>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          <%= course.explanation %>
+        </h3>
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+  <footer class="items-sell-footer">
+  <p class="inc">
+    ©︎Hide and Chef,Inc.
+  </p>
+</footer>
+</div>
+<%# //コース一覧 %>
