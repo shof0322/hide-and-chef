@@ -1,14 +1,20 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
   <div class='search-bar-contents'>
-    <%= link_to image_tag("hideandchef-logo.png", class:"furima-icon", size: '600×400'), "/" %>
+    <%= link_to image_tag("hideandchef-logo.png", class:"hac-icon", size: '600×400'), "/" %>
     <div class="title-logo">Hide and Chef</div>
   </div>
   <div class='nav'>
     <ul class='lists-right'>
       <% if user_signed_in? %> <%# ログインの有無で表示が変わるように分岐%>
-        <li><%= link_to 'My page', user_path(current_user), class: "user-nickname" %></li>
-        <li><%= link_to 'Chef page', "/chefs/#{current_user.id}", class: "user-nickname" %></li> 
+        <li class='mypage-list'>
+          <%= link_to '▼ My page', user_path(current_user), class: "mypage" %>
+          <ul>
+            <%= link_to 'ユーザー情報編集', edit_user_registration_path(current_user), class: "mypage-child" %>
+            <%= link_to 'クレジットカード情報登録', new_card_path(current_user), class: "mypage-child" %>
+          </ul>
+        </li>
+        <li><%= link_to 'Chef page', "/chefs/#{current_user.id}", class: "chef-page" %></li> 
         <li><%= link_to 'Logout', "/users/sign_out", method: :delete, class: "logout" %></li>
       <% else %>
         <li><%= link_to 'Login', "/users/sign_in", class: "login" %></li>

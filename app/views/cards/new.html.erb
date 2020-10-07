@@ -1,26 +1,47 @@
-<%= form_with url:cards_path, id: 'charge-form', class: 'card-form', local: true do |f| %>
-  <div class="Cardpage">
-    <h1>カード登録</h1>
-  </div><br>
-  <div class='form-wrap'>
-    <%= f.label :number, "【カード番号】" %>
-    <%= f.text_field :number, class:"number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+<div class="card-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
+  </header>
+  <div class="AccountPage">
+    <%= form_with url:cards_path, id: 'charge-form', class: 'card-form', local: true do |f| %>
+      <div class="Cardpage">
+        <h1>クレジットカード情報登録</h1>
+      </div><br>
+      <br>
+      <div class='form-wrap-mp'>
+        <%= f.label :number, "【カード番号】" %>
+        <br>
+        <%= f.text_field :number, class:"number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+      </div>
+      <br>
+      <br>
+      <div class='form-wrap-mp'>
+        <%= f.label :cvc ,"【ＣＶＣ】" %>
+        <br>
+        <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面にある3桁の番号", maxlength:"4" %>
+      </div>
+      <div class='form-wrap-mp'>
+      <br>
+      <br>
+        <p>【有効期限】</p><br>
+        <div class='input-expiration-date-wrap-mp'>
+          <%= f.select :exp_month, 1..12, {include_blank: "---"}, class: "exp_month" %>
+          <p>月</p>
+          <%= f.select :exp_year, 20..25, {include_blank: "---"}, class: "exp_year" %>
+          <p>年</p>
+        </div>
+      </div>
+      <%= f.submit "登録する" , class:"button" %>
+      <% end %>
   </div>
-  <div class='form-wrap'>
-    <%= f.label :cvc ,"【ＣＶＣ】" %>
-    <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面にある3桁の番号", maxlength:"4" %>
-  </div>
-  <div class='form-wrap'>
   <br>
-    <p>【有効期限】</p>
-    <div class='input-expiration-date-wrap'>
-      <%= f.select :exp_month, 1..12, {include_blank: "---"}, class: "exp_month" %>
-      <p>月</p>
-      <%= f.select :exp_year, 20..25, {include_blank: "---"}, class: "exp_year" %>
-      <p>年</p>
-    </div>
-  </div>
-  <%= f.submit "登録する" , class:"button" %>
-  <% end %>
-<p><%= link_to "マイページへ戻る" , edit_user_registration_path %></p>
-<%= link_to "Topへ戻る" , root_path %>
+  <br>
+  <p><%= link_to "マイページへ戻る" , edit_user_registration_path %></p>
+  <br>
+  <%= link_to "Topへ戻る" , root_path %>
+  <footer class="items-sell-footer">
+    <p class="inc">
+      ©︎Hide and Chef,Inc.
+    </p>
+  </footer>
+</div>

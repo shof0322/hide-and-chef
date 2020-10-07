@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   resources :cards, only: [:new, :create]
 
   resources :orders, only: [:new, :create]
+
+  get 'genres/index'
 end
