@@ -5,21 +5,19 @@
     <div class="title-logo">Hide and Chef</div>
   </div>
   <div class='nav'>
-    <ul class='lists-right'>
-      <% if user_signed_in? %> <%# ログインの有無で表示が変わるように分岐%>
-        <li class='mypage-list'>
-          <%= link_to '▼ My page', user_path(current_user), class: "mypage" %>
-          <ul>
-            <%= link_to 'ユーザー情報編集', edit_user_registration_path(current_user), class: "mypage-child" %>
-            <%= link_to 'クレジットカード情報登録', new_card_path(current_user), class: "mypage-child" %>
-          </ul>
-        </li>
-        <li><%= link_to 'Chef page', "/chefs/#{current_user.id}", class: "chef-page" %></li> 
-        <li><%= link_to 'Logout', "/users/sign_out", method: :delete, class: "logout" %></li>
-      <% else %>
-        <li><%= link_to 'Login', "/users/sign_in", class: "login" %></li>
-        <li><%= link_to 'Sigh up', new_user_path, class: "sign-up" %></li>
-      <% end %>
-    </ul>
+    <% if user_signed_in? %> <%# ログインの有無で表示が変わるように分岐%>
+      <li>
+        <%= link_to '▼ My page', user_path(current_user), class: "mypage" %>
+        <ul>
+          <%= link_to 'ユーザー情報編集', edit_user_registration_path(current_user), class: "mypage-child" %>
+          <%= link_to 'クレジットカード情報登録', new_card_path(current_user), class: "mypage-child" %>
+        </ul>
+      </li>
+      <li><%= link_to 'Chef page', "/chefs/#{current_user.id}", class: "chef-page" %></li> 
+      <li><%= link_to 'Logout', "/users/sign_out", method: :delete, class: "logout" %></li>
+    <% else %>
+      <li><%= link_to 'Login', "/users/sign_in", class: "login" %></li>
+      <li><%= link_to 'Sigh up', new_user_path, class: "sign-up" %></li>
+    <% end %>
   </div>
 </header>
