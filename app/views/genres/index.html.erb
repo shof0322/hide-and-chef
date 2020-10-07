@@ -1,0 +1,42 @@
+<%# コース一覧 %>
+<div class='item-contents'>
+<header class="items-sell-header">
+  <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
+</header>
+<div><%= "#{@courses[0].category.name}のコース一覧" %></div>
+  <ul class='item-lists'>
+    <% @courses.each do |course| %>
+    <li class='list'>
+      <%= link_to new_order_path(course.chef_id) do %>        
+      <div class='item-img-content'>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><%= image_tag course.images[0], class: "item-img" %></div>
+            <div class="swiper-slide"><%= image_tag course.images[1], class: "item-img" %></div>
+            <div class="swiper-slide"><%= image_tag course.images[2], class: "item-img" %></div>
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <!-- //Slider main container -->
+      </div>
+      <h2 class='title'><%= course.chef.name %></h2>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          <%= course.explanation %>
+        </h3>
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+  <footer class="items-sell-footer">
+  <p class="inc">
+    ©︎Hide and Chef,Inc.
+  </p>
+</footer>
+</div>
+<%# //コース一覧 %>
