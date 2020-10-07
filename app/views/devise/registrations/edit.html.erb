@@ -1,41 +1,36 @@
-<div class="items-sell-contents">
+<div class="userinfo-contents">
   <header class="items-sell-header">
     <%= link_to image_tag('hideandchef-logo.png' , size: '256x173'), "/" %>
   </header>
-
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="field">
-      <%= f.label :nickname %><br />
-      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <div class="AccountPage">
+    <div class='card-form'>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class='form-wrap-mp'>
+        <%= f.label :nickname %><br />
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+      </div>
+      <br>
+      <div class='form-wrap-mp'>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+      <div class="button">
+        <%= f.submit "ユーザー情報更新" %>
+      </div>
     <% end %>
-
-    <div class="actions">
-      <%= f.submit "Update" %>
     </div>
-  <% end %>
-
+  </div>
+  <br>
+  <br>
   <p><%= link_to "マイページへ戻る", user_path(current_user.id) %></p>
+  <br>
   <p><%= link_to "Topへ戻る", root_path %></p>
   
   <footer class="items-sell-footer">
-    <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">Hide and Chef 利用規約</a></li>
-      <li><a href="#">特定商取引に関する表記</a></li>
-    </ul>
     <p class="inc">
       ©︎Hide and Chef,Inc.
     </p>
