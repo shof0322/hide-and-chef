@@ -50,5 +50,8 @@ test:
 production:
   <<: *default
   database: hideandchef_production
-  username: hideandchef
-  password: <%= ENV['HIDEANDCHEF_DATABASE_PASSWORD'] %>
+  # username: hideandchef
+  # password: <%= ENV['HIDEANDCHEF_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
