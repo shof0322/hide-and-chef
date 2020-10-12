@@ -5,7 +5,7 @@
 .top-page-header {
   width: 100vw;
   height: 200px;
-  padding: 2vh 15vw;
+  padding: 2vh 10vw;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -28,6 +28,8 @@
   width: 50vw;
   font-size: 50px;
   font-weight: bold;
+  display: flex;
+  align-items:center;
 }
 
 .nav {
@@ -57,7 +59,9 @@
   display: flex;
   flex-direction: column;
   padding: 5px 0px;
-} 
+  background-color: white;
+  border: solid 1px lightgray;
+}
 
 .nav li ul a:hover {
   font-size: 14px;
