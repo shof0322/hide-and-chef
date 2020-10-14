@@ -23,6 +23,7 @@ class ChefsController < ApplicationController
 
   def show
     @chef = Chef.find_by(user_id: params[:id])
+    @gmap_api_src = "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API']}&callback=initMap"
     if @chef.nil?
       redirect_to new_chef_path
     else
