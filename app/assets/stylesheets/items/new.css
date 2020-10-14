@@ -274,3 +274,15 @@
 .inc {
   font-size: 13px;
 }
+
+.invest-return, .chef-commitment{
+  margin-top: 2vh;
+  width: 100%;
+}
+
+.target-price {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+}

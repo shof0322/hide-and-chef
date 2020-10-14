@@ -24,7 +24,7 @@
     <div id="image-list"></div>
     <%# /シェフ画像 %>
 
-    <%# 名前と自己紹介とこだわり %>
+    <%# 名前と自己紹介とカテゴリーとこだわり %>
     <div class="new-items">
       <div class="weight-bold-text">
         名前
@@ -38,30 +38,26 @@
         </div>
         <%= f.text_area :explanation, class:"items-text", id:"item-info", rows:"7" ,maxlength:"1000" %>
       </div>
-    </div>
-    <%# /名前と自己紹介とこだわり %>
-
-    <%# カテゴリーとこだわり %>
-    <div class="items-detail">
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-      </div>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          こだわり
-          <span class="indispensable">必須</span>
+        <div class="chef-commitment">
+          <div class="weight-bold-text">
+            こだわり
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :commitment, class:"items-text", id:"item-info", rows:"7" ,maxlength:"1000" %>
         </div>
-        <%= f.text_area :commitment, class:"items-text", id:"item-info", rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /カテゴリーとこだわり %>
+    <%# //名前と自己紹介とカテゴリーとこだわり %>
 
     <%# 店舗情報 %>
-    <div class='shipping-address-form'>
+    <%# <div class='shipping-address-form'> %>
+    <div class='new-items'>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">都道府県</label>
@@ -101,21 +97,21 @@
     <%# /店舗情報 %>
 
     <%# 目標調達額 %>
-    <div class="sell-price">
+    <div class="target-price">
       <div class="weight-bold-text question-text">
-        <span>目標調達額<br>(¥300〜9,999,999)</span>
+        <span>目標調達額<br>(¥0〜999,999,999)</span>
         <a class="question" href="#">?</a>
       </div>
       <div>
         <div class="price-content">
           <div class="price-text">
-            <span>目標価格</span>
+            <span>目標調達額</span>
           </div>
           <span class="sell-yen">¥</span>
           <%= f.text_field :target_amount, class:"price-input", id:"item-price" %>
         </div>
       </div>
-      <div class="items-explain">
+      <div class="invest-return">
         <div class="weight-bold-text">
           投資リターンについて
         </div>

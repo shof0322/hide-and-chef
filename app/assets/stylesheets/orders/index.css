@@ -136,7 +136,8 @@
 
 /* 配送先の入力 */
 .shipping-address-form {
-  margin-top: 15px;
+  margin: 15px 0px;
+  
 }
 
 .form-any {
