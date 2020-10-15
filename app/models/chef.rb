@@ -13,5 +13,9 @@ class Chef < ApplicationRecord
     validates :prefecture_id, :category_id, numericality: { other_than: 1 }
     validates :phone_num, format: { with: /\A\d{11}\z/ }
   end
+
+  def return_address
+    address = "#{self.prefecture.name}#{self.city}#{self.address}#{self.building}"
+  end
 end
 

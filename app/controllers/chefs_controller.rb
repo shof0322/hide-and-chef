@@ -26,6 +26,8 @@ class ChefsController < ApplicationController
     if @chef.nil?
       redirect_to new_chef_path
     else
+      @gmap_api_src = "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API']}&callback=initMap"
+      @address = @chef.return_address
       render :show
     end
   end
